@@ -19,7 +19,10 @@ def encrypt(text, shift):
                 Lchar_cipher = chr((ord(char) - 97 + shift) % 26 + 97)
                 result += Lchar_cipher
 
-    print(result)
+    print("-" * 100)
+    print("Plain Text : ", text)
+    print("Shift Key: ", shift)
+    print("Cipher: ", result)
     print("-" * 100)
     main()
 
@@ -39,7 +42,10 @@ def decrypt(cipher_text, shift):
             else:
                 Lchar_text = chr((ord(char) - 97 - shift) % 26 + 97)
                 result += Lchar_text
-    print(result)
+    print("-" * 100)
+    print("Cipher Text : ", cipher_text)
+    print("Shift Key: ", shift)
+    print("Plain Text: ", result)
     print("-" * 100)
     main()
 
@@ -59,7 +65,7 @@ def main():
   ******************************************************************************************************
     """
     print(f"{Green}{banner_display}{Reset}")
-    print("Choose Method \n1. Encrypt \n2. Decrypt\n")
+    print("Choose Method \n1. Encrypt \n2. Decrypt\n3. Exit\n")
     method = int(input("Enter Method(eg. 1):"))
     if method == 1:
         text = input("Enter the text: ")
@@ -69,6 +75,8 @@ def main():
         cipher_text = input("Enter the Cipher Text: ")
         shift = int(input("Shift Number: "))
         decrypt(cipher_text, shift)
+    elif method == 3:
+        exit()
     else:
         print("Something wrong")
 
